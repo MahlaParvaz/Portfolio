@@ -56,6 +56,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium mb-3"
           >
             Front-End Developer
+            <span className="text-muted-foreground/60 text-base sm:text-lg md:text-xl font-normal"> (Vue / React / Frontend Architect)</span>
           </motion.p>
 
           <motion.p
@@ -64,9 +65,9 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Crafting responsive, performant web applications with React,
-            Next.js, and TypeScript. Passionate about clean code and
-            exceptional user experiences.
+            Building scalable enterprise web applications with Vue 3, React,
+            Next.js, and TypeScript. Specializing in state-driven architectures,
+            dynamic routing systems, and modular frontend design.
           </motion.p>
 
           <motion.div

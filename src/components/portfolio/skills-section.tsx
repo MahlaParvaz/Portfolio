@@ -11,78 +11,80 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Core Technologies",
+    title: "Frontend Core",
+    skills: ["Vue 3", "React.js", "Next.js (13–15)", "TypeScript", "JavaScript (ES6+)"],
+  },
+  {
+    title: "State & Architecture",
     skills: [
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "React.js (v18+)",
-      "Next.js (v13+)",
-      "HTML5 / CSS3",
+      "Pinia",
+      "Vue Router",
+      "XState",
+      "Server-driven UI",
+      "Agentic / SDD Workflow",
+      "File-type Architecture",
+      "Component-based Architecture",
     ],
   },
   {
-    title: "State Management & Data",
-    skills: [
-      "Redux",
-      "Zustand",
-      "Context API",
-      "Redux Thunk",
-      "React Query",
-      "SWR",
-    ],
+    title: "Data & API Layer",
+    skills: ["Axios", "React Query / TanStack Query", "REST APIs", "qs", "idb-keyval"],
   },
   {
-    title: "Styling & UI",
+    title: "Forms & Validation",
+    skills: ["Vee-Validate", "Yup", "Zod", "@vee-validate/i18n"],
+  },
+  {
+    title: "UI & Styling",
     skills: [
       "TailwindCSS",
+      "Sass / SCSS",
       "Material UI",
       "Shadcn UI",
-      "styled-components",
-      "Sass / SCSS",
-      "CSS Modules",
+      "floating-vue",
+      "vue-select",
+      "vue3-toastification",
+      "@formkit/auto-animate",
     ],
   },
   {
-    title: "Tools & Workflow",
+    title: "Performance & PWA",
+    skills: [
+      "Vite",
+      "PWA (workbox)",
+      "Bundle Optimization",
+      "VueUse Composables",
+      "Webpack",
+    ],
+  },
+  {
+    title: "Monitoring & Security",
+    skills: [
+      "Sentry",
+      "crypto-js",
+      "jose (JWT)",
+      "js-cookie",
+      "vue-simple-acl",
+    ],
+  },
+  {
+    title: "Dev Tools & Workflow",
     skills: [
       "Git (GitHub / GitLab)",
-      "Webpack",
-      "Babel",
-      "Postman",
-      "NPM / Yarn",
-      "Storybook",
+      "pnpm",
+      "ESLint / Prettier",
+      "CI/CD",
+      "Jira, Agile, Scrum",
     ],
   },
   {
-    title: "APIs & Backend",
+    title: "System Knowledge",
     skills: [
-      "RESTful APIs",
-      "Axios",
-      "Fetch API",
-      "Swagger",
-      "MongoDB",
-    ],
-  },
-  {
-    title: "Rendering & Architecture",
-    skills: [
-      "SSR / ISR / SSG",
-      "SPA",
-      "PWA",
-      "OOP",
-      "Atomic Design",
-      "Semantic Web",
-    ],
-  },
-  {
-    title: "Soft Skills",
-    skills: [
-      "Teamwork",
-      "Creativity",
-      "Pair Programming",
-      "Self-learning",
-      "Time Management",
-      "Communication",
+      "PWA Architecture",
+      "Micro Frontend (exposure)",
+      "Server-driven UI",
+      "State Machine Navigation",
+      "Enterprise Patterns",
     ],
   },
 ];
@@ -93,7 +95,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: i * 0.08, duration: 0.45, ease: "easeOut" },
+    transition: { delay: i * 0.06, duration: 0.4, ease: "easeOut" },
   }),
 };
 
@@ -104,10 +106,10 @@ export function SkillsSection() {
         <SectionHeading
           label="Skills"
           title="My Tech Stack"
-          description="Technologies and tools I use to bring ideas to life."
+          description="Technologies and architectural patterns I work with."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, i) => (
             <motion.div
               key={category.title}
@@ -135,23 +137,6 @@ export function SkillsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Additional tools */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-8 text-center"
-        >
-          <p className="text-sm text-muted-foreground">
-            Also experienced with:{" "}
-            <span className="text-foreground/80">
-              Figma, Chart.js, Scrum, Jira, Taskulu, Authentication/Authorization,
-              React Router Dom, UI/UX Design, Responsive Development
-            </span>
-          </p>
-        </motion.div>
       </div>
     </section>
   );

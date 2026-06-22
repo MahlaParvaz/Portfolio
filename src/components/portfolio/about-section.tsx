@@ -2,32 +2,32 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "./section-heading";
-import { Code2, Palette, Zap, Users } from "lucide-react";
+import { Cpu, Layers, Shield, Workflow } from "lucide-react";
 
 const highlights = [
   {
-    icon: Code2,
-    title: "Clean Code",
+    icon: Cpu,
+    title: "State-Driven Architecture",
     description:
-      "Committed to writing maintainable, well-structured code following best practices and design patterns.",
+      "Designing frontend systems powered by XState state machines and server-driven UI concepts for predictable, scalable application behavior.",
   },
   {
-    icon: Palette,
-    title: "UI/UX Focus",
+    icon: Layers,
+    title: "Enterprise Systems",
     description:
-      "Creating pixel-perfect, responsive interfaces with attention to accessibility and visual hierarchy.",
+      "Building production-grade interfaces for large organizations with focus on maintainability, modular architecture, and PWA-ready systems.",
   },
   {
-    icon: Zap,
-    title: "Performance",
+    icon: Shield,
+    title: "Security & Observability",
     description:
-      "Optimizing applications with SSR, ISR, and modern rendering strategies for the best user experience.",
+      "Integrating enterprise security patterns including JWT handling, encryption, access control, and Sentry-powered error monitoring in production.",
   },
   {
-    icon: Users,
-    title: "Team Player",
+    icon: Workflow,
+    title: "SDD Workflow",
     description:
-      "Thriving in Agile environments with effective communication, code reviews, and collaborative development.",
+      "Applying Spec-Driven Development and agentic frontend patterns to map requirements to behavior to UI flow with structured, traceable implementation.",
   },
 ];
 
@@ -62,23 +62,30 @@ export function AboutSection() {
               </span>
               , a Front-End Developer with over{" "}
               <span className="text-primary font-semibold">2+ years</span> of
-              hands-on experience building modern web applications. I specialize
-              in the React ecosystem &mdash; including Next.js, TypeScript, and
-              state management libraries like Redux and Zustand.
+              experience building scalable enterprise web applications. I work
+              across{" "}
+              <span className="text-foreground font-semibold">
+                Vue 3, React, Next.js
+              </span>{" "}
+              and{" "}
+              <span className="text-foreground font-semibold">
+                TypeScript
+              </span>
+              , with exposure to frontend architecture patterns.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              I&apos;ve worked on diverse projects ranging from healthcare platforms
-              serving doctors and patients, to real estate platforms with
-              thousands of active users, and AI-powered solutions. Each project
-              has sharpened my ability to translate complex requirements into
-              intuitive, performant interfaces.
+              My recent work at PART Software Group involves designing
+              state-machine-driven architectures with XState, building
+              enterprise digital signature systems used by 1,000+ users, and
+              implementing Spec-Driven Development workflows. I&apos;ve also
+              built healthcare platforms, real estate applications, and AI-powered
+              infrastructure tools.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              I&apos;m passionate about continuous learning, clean architecture,
-              and delivering value through thoughtful front-end engineering.
-              When I&apos;m not coding, I enjoy exploring new technologies and
-              contributing to team growth through pair programming and
-              mentoring.
+              I&apos;m passionate about structured architecture, clean code
+              principles, and bridging the gap between business requirements and
+              robust frontend implementations. I thrive in Agile environments
+              and enjoy tackling complex architectural challenges.
             </p>
           </motion.div>
 

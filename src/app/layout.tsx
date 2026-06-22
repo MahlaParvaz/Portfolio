@@ -17,15 +17,18 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Mahla Zohourparvaz | Front-End Developer",
+  title: "Mahla Zohourparvaz | Front-End Developer (Vue / React)",
   description:
-    "Front-End Developer with 2+ years of experience in React.js, Next.js, TypeScript, and modern web technologies. Building responsive, performant web applications.",
+    "Front-End Developer with 2+ years of experience building scalable enterprise web applications using Vue 3, React, Next.js, and TypeScript. Specializing in state-driven architectures and modular frontend design.",
   keywords: [
     "Mahla Zohourparvaz",
     "Front-End Developer",
     "React",
     "Next.js",
+    "Vue 3",
     "TypeScript",
+    "XState",
+    "Enterprise Frontend",
     "Portfolio",
   ],
   authors: [{ name: "Mahla Zohourparvaz" }],

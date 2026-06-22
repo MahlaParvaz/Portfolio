@@ -4,15 +4,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./section-heading";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-  ExternalLink,
-  Github,
   X,
   ChevronRight,
   Calendar,
   MapPin,
   Users,
+  ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -32,10 +30,58 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Web-Signature Platform",
+    subtitle: "Enterprise Digital Signing",
+    description:
+      "A complex enterprise system for digital signing, certificate workflows, and secure document processing. Built with state machine-driven architecture using XState, featuring state-driven routing and SDD workflow.",
+    image: "/projects/web-signature.png",
+    period: "2025 - Present",
+    location: "Iran",
+    type: "Full-time",
+    users: "1,000+ Users",
+    tech: [
+      "Vue 3",
+      "XState",
+      "TypeScript",
+      "Pinia",
+      "Sass",
+      "Sentry",
+      "PWA",
+    ],
+    features: [
+      "State machine–driven architecture using XState for complex workflows",
+      "State-driven routing system derived from state machine configuration",
+      "Agentic + SDD (Spec-Driven Development) workflow for feature implementation",
+      "Structured spec-to-implementation mapping (requirements → behavior → UI)",
+      "File-type-based project architecture for scalable code organization",
+      "Reusable shared kernel component integration",
+      "Sentry-powered production error tracking and observability",
+      "PWA-ready frontend architecture for enterprise usage",
+    ],
+  },
+  {
+    title: "DSS (Digital Signature System)",
+    subtitle: "Enterprise Certificate Management",
+    description:
+      "Internal enterprise platform for managing certificates, HSM devices, and organizational signing infrastructure. Supports enterprise-scale usage across internal organizational systems.",
+    image: "/projects/dss-system.png",
+    period: "2025 - Present",
+    location: "Iran",
+    type: "Full-time",
+    users: "Enterprise Internal",
+    tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
+    features: [
+      "UI modules for internal admin and operational workflows",
+      "Sass-based UI architecture and design system",
+      "Reusable and modular frontend components",
+      "Enterprise-scale support across organizational systems",
+    ],
+  },
+  {
     title: "Smart Dentistry (DRI 2717)",
     subtitle: "Healthcare Platform",
     description:
-      "A comprehensive healthcare platform consisting of three panels — Doctor, Patient, and Admin — enabling appointment scheduling, medical records management, and purchasing medical products. A full-featured SaaS solution serving real patients and healthcare providers.",
+      "Multi-panel healthcare platform (Doctor / Patient / Admin) for appointment scheduling, medical records, and e-commerce services with responsive UI and clean architecture.",
     image: "/projects/smart-dentistry.png",
     period: "Feb 2024 - Present",
     location: "Mashhad, Iran",
@@ -48,21 +94,19 @@ const projects: Project[] = [
       "Shadcn UI",
       "React Query",
       "Zod",
-      "Axios",
     ],
     features: [
       "Three-panel architecture: Doctor, Patient, and Admin",
-      "Appointment scheduling with real-time availability",
-      "Medical records management system",
-      "Medical product e-commerce integration",
-      "Responsive design with form validation via Zod",
+      "API integration and caching using React Query + Axios",
+      "Form validation system designed with Zod",
+      "Agile environment with clean-code practices",
     ],
   },
   {
     title: "MoshaVeremon",
     subtitle: "Real Estate Platform",
     description:
-      "A feature-rich real estate platform with over 1,000 active users for property buy, sell, and rent operations. Includes a comprehensive admin panel that was refactored from scratch for better maintainability and performance.",
+      "Real estate platform with 1,000+ active users. Refactored ~90% of the admin panel for better scalability and maintainability.",
     image: "/projects/moshaveremon.png",
     period: "Sep 2024 - Feb 2025",
     location: "Tehran, Iran",
@@ -70,18 +114,17 @@ const projects: Project[] = [
     users: "1,000+ Active Users",
     tech: ["Next.js 14", "TypeScript", "Zustand", "TailwindCSS"],
     features: [
-      "Property listing with advanced search and filters",
-      "Buy, sell, and rent functionality",
-      "Refactored 90% of the admin panel from scratch",
-      "Responsive design optimized for all devices",
-      "Clean architecture with Zustand state management",
+      "Refactored ~90% of admin panel from scratch",
+      "Improved scalability and maintainability of dashboard",
+      "Reusable components with clean architecture patterns",
+      "Responsive UI optimized for all devices",
     ],
   },
   {
     title: "Nextera Factory",
     subtitle: "AI & Cloud Solutions",
     description:
-      "A platform with 2,000+ active users for server, CPU, GPU, and AI solutions. Built two major products: Aibox (hardware resource-sharing) and Roobin (AI-powered employee access system), both requiring complex state management and API integration.",
+      "Platform with 2,000+ users for server, CPU, GPU, and AI solutions. Built Aibox (resource-sharing) and Roobin (AI-powered access system).",
     image: "/projects/nextera-factory.png",
     period: "Jun 2024 - Sep 2024",
     location: "Tehran, Iran",
@@ -96,10 +139,9 @@ const projects: Project[] = [
       "Swagger",
     ],
     features: [
-      "Aibox: Typed hardware resource-sharing platform",
+      "Aibox: Hardware resource-sharing platform",
       "Roobin: AI-powered employee access control system",
-      "Complex state management with Redux and Zustand",
-      "API integration via Swagger documentation",
+      "REST API integration via Swagger documentation",
       "Agile collaboration with Jira & GitLab",
     ],
   },
