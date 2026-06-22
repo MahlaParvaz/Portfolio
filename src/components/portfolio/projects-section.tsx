@@ -30,6 +30,28 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "DSS (Digital Signature System)",
+    subtitle: "Enterprise Certificate Management",
+    description:
+      "Internal enterprise platform for managing digital certificates, HSM devices, and organizational signing infrastructure. Features a polished dark-themed admin dashboard, login system with security illustration, and comprehensive certificate/HSM management workflows.",
+    image: "/projects/dss-system.png",
+    period: "2025 - Present",
+    location: "Iran",
+    type: "Full-time",
+    users: "1,000+ Users",
+    tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
+    features: [
+      "Secure login system with security-themed illustrations and dark UI",
+      "Dashboard with data tables for certificate management and monitoring",
+      "HSM device configuration panel with activation modes and slot management",
+      "Certificate creation forms with type selection and coordinate parameters",
+      "Sidebar navigation with multi-panel access (DSS Dashboard, HSM Panel)",
+      "Form validation with inline error messages and Persian RTL support",
+      "Reusable modular frontend components with Sass-based design system",
+      "Enterprise-scale architecture supporting 1,000+ concurrent users",
+    ],
+  },
+  {
     title: "Web-Signature Platform",
     subtitle: "Enterprise Digital Signing",
     description:
@@ -57,24 +79,6 @@ const projects: Project[] = [
       "Reusable shared kernel component integration",
       "Sentry-powered production error tracking and observability",
       "PWA-ready frontend architecture for enterprise usage",
-    ],
-  },
-  {
-    title: "DSS (Digital Signature System)",
-    subtitle: "Enterprise Certificate Management",
-    description:
-      "Internal enterprise platform for managing certificates, HSM devices, and organizational signing infrastructure. Supports enterprise-scale usage across internal organizational systems.",
-    image: "/projects/dss-system.png",
-    period: "2025 - Present",
-    location: "Iran",
-    type: "Full-time",
-    users: "Enterprise Internal",
-    tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
-    features: [
-      "UI modules for internal admin and operational workflows",
-      "Sass-based UI architecture and design system",
-      "Reusable and modular frontend components",
-      "Enterprise-scale support across organizational systems",
     ],
   },
   {
@@ -146,6 +150,8 @@ const projects: Project[] = [
     ],
   },
 ];
+
+/* ─── Project Modal ──────────────────────────────────────── */
 
 function ProjectModal({
   project,
@@ -268,14 +274,18 @@ function ProjectModal({
   );
 }
 
+/* ─── Card Variants ──────────────────────────────────────── */
+
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
   }),
 };
+
+/* ─── Projects Section ───────────────────────────────────── */
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
