@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp } from "lucide-react";
@@ -115,86 +115,71 @@ const experiences: Experience[] = [
   },
 ];
 
-const timelineVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
-  }),
-};
-
 function SubProjectCard({ project, index }: { project: SubProject; index: number }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.4 }}
-      className="mt-4 border border-border rounded-lg bg-muted/30 overflow-hidden"
-    >
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
-        aria-expanded={open}
-      >
-        <div>
-          <h4 className="font-semibold text-foreground text-sm">{project.title}</h4>
-          <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{project.description}</p>
-        </div>
-        <div className="flex items-center gap-2 shrink-0 ml-4">
-          <div className="hidden sm:flex flex-wrap gap-1">
-            {project.tech.slice(0, 3).map((t) => (
-              <Badge key={t} variant="secondary" className="text-[10px] font-normal px-1.5 py-0">
-                {t}
-              </Badge>
-            ))}
-          </div>
-          {open ? (
-            <ChevronUp className="h-4 w-4 text-muted-foreground" />
-          ) : (
-            <ChevronDown className="h-4 w-4 text-muted-foreground" />
-          )}
-        </div>
-      </button>
-
-      {open && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="border-t border-border"
+    <FadeInView delay={index * 100}>
+      <div className="mt-4 border border-border rounded-lg bg-muted/30 overflow-hidden">
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors"
+          aria-expanded={open}
         >
-          <div className="p-4 pt-3 space-y-4">
-            <p className="text-sm text-muted-foreground">{project.description}</p>
-
-            <div>
-              <h5 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
-                Key Contributions
-              </h5>
-              <ul className="space-y-1.5">
-                {project.highlights.map((h, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <Briefcase className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-wrap gap-1.5">
-              {project.tech.map((t) => (
-                <Badge key={t} variant="secondary" className="text-xs font-normal">
+          <div>
+            <h4 className="font-semibold text-foreground text-sm">{project.title}</h4>
+            <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{project.description}</p>
+          </div>
+          <div className="flex items-center gap-2 shrink-0 ml-4">
+            <div className="hidden sm:flex flex-wrap gap-1">
+              {project.tech.slice(0, 3).map((t) => (
+                <Badge key={t} variant="secondary" className="text-[10px] font-normal px-1.5 py-0">
                   {t}
                 </Badge>
               ))}
             </div>
+            {open ? (
+              <ChevronUp className="h-4 w-4 text-muted-foreground" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            )}
           </div>
-        </motion.div>
-      )}
-    </motion.div>
+        </button>
+
+        <div
+          className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+          style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+        >
+          <div className="overflow-hidden">
+            <div className="p-4 pt-3 space-y-4 border-t border-border">
+              <p className="text-sm text-muted-foreground">{project.description}</p>
+
+              <div>
+                <h5 className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">
+                  Key Contributions
+                </h5>
+                <ul className="space-y-1.5">
+                  {project.highlights.map((h, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <Briefcase className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <Badge key={t} variant="secondary" className="text-xs font-normal">
+                    {t}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FadeInView>
   );
 }
 
@@ -214,100 +199,96 @@ export function ExperienceSection() {
 
           <div className="space-y-12">
             {experiences.map((exp, i) => (
-              <motion.div
-                key={exp.company}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-80px" }}
-                variants={timelineVariants}
-                className={`relative flex flex-col md:flex-row gap-6 md:gap-10 ${
-                  i % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-primary border-4 border-background z-10 mt-8" />
+              <FadeInView key={exp.company} delay={i * 150}>
+                <div
+                  className={`relative flex flex-col md:flex-row gap-6 md:gap-10 ${
+                    i % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-primary border-4 border-background z-10 mt-8" />
 
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block md:w-1/2" />
 
-                {/* Content Card */}
-                <div className="ml-12 md:ml-0 md:w-1/2">
-                  <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all duration-300 group">
-                    {/* Header */}
-                    <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                          {exp.company}
-                        </h3>
-                        <p className="text-primary font-medium text-sm">
-                          {exp.role}
-                        </p>
-                      </div>
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-primary/30 text-primary"
-                      >
-                        {exp.type}
-                      </Badge>
-                    </div>
-
-                    {/* Meta */}
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
-                      <span className="inline-flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
-                        {exp.period}
-                      </span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3 w-3" />
-                        {exp.location}
-                      </span>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    {/* Sub-projects (expandable) */}
-                    {exp.subProjects && (
-                      <div className="mb-4">
-                        {exp.subProjects.map((sp, spIdx) => (
-                          <SubProjectCard key={sp.title} project={sp} index={spIdx} />
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Highlights (for non-sub-project entries) */}
-                    {exp.highlights && (
-                      <ul className="space-y-2 mb-4">
-                        {exp.highlights.map((h, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-sm text-muted-foreground"
-                          >
-                            <Briefcase className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {exp.tech.map((t) => (
+                  {/* Content Card */}
+                  <div className="ml-12 md:ml-0 md:w-1/2">
+                    <div className="p-6 rounded-xl border border-border bg-card hover:shadow-lg transition-all duration-300 group">
+                      {/* Header */}
+                      <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                        <div>
+                          <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                            {exp.company}
+                          </h3>
+                          <p className="text-primary font-medium text-sm">
+                            {exp.role}
+                          </p>
+                        </div>
                         <Badge
-                          key={t}
-                          variant="secondary"
-                          className="text-xs font-normal"
+                          variant="outline"
+                          className="text-xs border-primary/30 text-primary"
                         >
-                          {t}
+                          {exp.type}
                         </Badge>
-                      ))}
+                      </div>
+
+                      {/* Meta */}
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-4">
+                        <span className="inline-flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          {exp.period}
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          {exp.location}
+                        </span>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                        {exp.description}
+                      </p>
+
+                      {/* Sub-projects (expandable) */}
+                      {exp.subProjects && (
+                        <div className="mb-4">
+                          {exp.subProjects.map((sp, spIdx) => (
+                            <SubProjectCard key={sp.title} project={sp} index={spIdx} />
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Highlights (for non-sub-project entries) */}
+                      {exp.highlights && (
+                        <ul className="space-y-2 mb-4">
+                          {exp.highlights.map((h, idx) => (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2 text-sm text-muted-foreground"
+                            >
+                              <Briefcase className="h-3.5 w-3.5 text-primary mt-0.5 shrink-0" />
+                              <span>{h}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-1.5">
+                        {exp.tech.map((t) => (
+                          <Badge
+                            key={t}
+                            variant="secondary"
+                            className="text-xs font-normal"
+                          >
+                            {t}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </FadeInView>
             ))}
           </div>
         </div>

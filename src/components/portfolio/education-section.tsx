@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { GraduationCap } from "lucide-react";
 
@@ -13,13 +13,7 @@ export function EducationSection() {
           title="Academic Background"
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto"
-        >
+        <FadeInView className="max-w-2xl mx-auto">
           <div className="p-6 sm:p-8 rounded-xl border border-border bg-card hover:shadow-lg transition-all duration-300 group">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -45,7 +39,7 @@ export function EducationSection() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </FadeInView>
       </div>
     </section>
   );

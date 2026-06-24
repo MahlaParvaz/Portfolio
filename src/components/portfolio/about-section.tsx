@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Cpu, Layers, Shield, Workflow } from "lucide-react";
 
@@ -31,15 +31,6 @@ const highlights = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.15, duration: 0.5, ease: "easeOut" },
-  }),
-};
-
 export function AboutSection() {
   return (
     <section id="about" className="py-20 sm:py-28">
@@ -48,13 +39,7 @@ export function AboutSection() {
 
         <div className="grid md:grid-cols-2 gap-12 items-start mt-12">
           {/* Bio */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="space-y-5"
-          >
+          <FadeInView direction="left" className="space-y-5">
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
               Hi! I&apos;m{" "}
               <span className="text-foreground font-semibold">
@@ -87,30 +72,24 @@ export function AboutSection() {
               robust frontend implementations. I thrive in Agile environments
               and enjoy tackling complex architectural challenges.
             </p>
-          </motion.div>
+          </FadeInView>
 
           {/* Highlight Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {highlights.map((item, i) => (
-              <motion.div
-                key={item.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={fadeUp}
-                className="group p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                  <item.icon className="h-5 w-5 text-primary" />
+              <FadeInView key={item.title} delay={i * 150}>
+                <div className="group p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 h-full">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-1.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-1.5">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
+              </FadeInView>
             ))}
           </div>
         </div>

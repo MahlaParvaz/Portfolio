@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Badge } from "@/components/ui/badge";
 
@@ -89,16 +89,6 @@ const skillCategories: SkillCategory[] = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 25, scale: 0.97 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { delay: i * 0.06, duration: 0.4, ease: "easeOut" },
-  }),
-};
-
 export function SkillsSection() {
   return (
     <section id="skills" className="py-20 sm:py-28">
@@ -111,30 +101,24 @@ export function SkillsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, i) => (
-            <motion.div
-              key={category.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={cardVariants}
-              className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 group"
-            >
-              <h3 className="font-semibold text-foreground mb-3 text-sm group-hover:text-primary transition-colors">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-1.5">
-                {category.skills.map((skill) => (
-                  <Badge
-                    key={skill}
-                    variant="secondary"
-                    className="text-xs font-normal"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+            <FadeInView key={category.title} delay={i * 60}>
+              <div className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 group h-full">
+                <h3 className="font-semibold text-foreground mb-3 text-sm group-hover:text-primary transition-colors">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {category.skills.map((skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="text-xs font-normal"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </FadeInView>
           ))}
         </div>
       </div>

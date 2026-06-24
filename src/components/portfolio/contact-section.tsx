@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +17,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const contactInfo = [
   {
@@ -108,39 +108,21 @@ export function ContactSection() {
 
         <div className="grid md:grid-cols-5 gap-10 mt-12">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-2 space-y-4"
-          >
-            {contactInfo.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-              >
+          <FadeInView direction="left" className="md:col-span-2 space-y-1">
+            {contactInfo.map((item) => (
+              <div key={item.label}>
                 {item.href ? (
                   <a
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      item.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
+                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
                   >
                     <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">
-                        {item.label}
-                      </p>
+                      <p className="text-xs text-muted-foreground">{item.label}</p>
                       <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                         {item.value}
                       </p>
@@ -152,27 +134,17 @@ export function ContactSection() {
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">
-                        {item.label}
-                      </p>
-                      <p className="text-sm font-medium text-foreground">
-                        {item.value}
-                      </p>
+                      <p className="text-xs text-muted-foreground">{item.label}</p>
+                      <p className="text-sm font-medium text-foreground">{item.value}</p>
                     </div>
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </FadeInView>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="md:col-span-3"
-          >
+          <FadeInView direction="right" delay={100} className="md:col-span-3">
             <form
               onSubmit={handleSubmit}
               className="p-6 rounded-xl border border-border bg-card space-y-5"
@@ -184,9 +156,7 @@ export function ContactSection() {
                     id="name"
                     placeholder="Your name"
                     value={form.name}
-                    onChange={(e) =>
-                      setForm({ ...form, name: e.target.value })
-                    }
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
                   />
                 </div>
                 <div className="space-y-2">
@@ -196,9 +166,7 @@ export function ContactSection() {
                     type="email"
                     placeholder="your@email.com"
                     value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
                   />
                 </div>
               </div>
@@ -209,9 +177,7 @@ export function ContactSection() {
                   placeholder="Tell me about your project or just say hello..."
                   rows={5}
                   value={form.message}
-                  onChange={(e) =>
-                    setForm({ ...form, message: e.target.value })
-                  }
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
                 />
               </div>
               <Button
@@ -237,7 +203,7 @@ export function ContactSection() {
                 )}
               </Button>
             </form>
-          </motion.div>
+          </FadeInView>
         </div>
       </div>
     </section>
