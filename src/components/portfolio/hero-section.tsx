@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -88,21 +88,6 @@ export function HeroSection() {
             >
               <a href="#contact">Get in Touch</a>
             </Button>
-          </motion.div>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <ArrowDown className="h-5 w-5 text-muted-foreground/50" />
           </motion.div>
         </motion.div>
       </div>
