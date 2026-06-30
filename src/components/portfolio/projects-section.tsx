@@ -44,7 +44,7 @@ const projects: Project[] = [
     subtitle: "Digital Signature Administration",
     description:
       "Centralized administration system for managing digital certificates, payments, businesses, and signature requests across the digital signature ecosystem with PWA support.",
-    image: "/projects/dss-admin-panel.png",
+    image: "/projects/dss-admin-panel.webp",
     period: "2025 - Present",
     location: "Iran",
     type: "Full-time",
@@ -113,7 +113,7 @@ const projects: Project[] = [
     subtitle: "Smart Dentistry",
     description:
       "Comprehensive platform for dental professionals providing access to dental events, congresses, educational content, products, and business opportunities.",
-    image: "/projects/deventapp.png",
+    image: "/projects/deventapp.webp",
     period: "Feb 2024 - Present",
     location: "Mashhad, Iran",
     type: "Full-time",
@@ -134,7 +134,7 @@ const projects: Project[] = [
     subtitle: "Smart Dentistry",
     description:
       "Admin Panel for DeventApp — a comprehensive management platform used to administer and moderate the entire dental community ecosystem.",
-    image: "/projects/devent-admin-panel.png",
+    image: "/projects/devent-admin-panel.webp",
     period: "Feb 2024 - Present",
     location: "Mashhad, Iran",
     type: "Full-time",
@@ -154,7 +154,7 @@ const projects: Project[] = [
     subtitle: "Smart Dentistry",
     description:
       "Internal dental clinic management system for Dr. Mola's dental clinic, replacing manual appointment processes and streamlining daily operations.",
-    image: "/projects/cloudent.png",
+    image: "/projects/cloudent.webp",
     period: "Feb 2024 - Present",
     location: "Mashhad, Iran",
     type: "Full-time",
@@ -230,7 +230,7 @@ const projects: Project[] = [
     subtitle: "Nextera Factory",
     description:
       "Centralized administration platform for managing the entire AIBox ecosystem and its operational processes.",
-    image: "/projects/aibox-admin-panel.png",
+    image: "/projects/aibox-admin-panel.webp",
     period: "Jun 2024 - Sep 2024",
     location: "Tehran, Iran",
     type: "Internship",
