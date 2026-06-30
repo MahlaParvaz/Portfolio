@@ -73,14 +73,24 @@ const experiences: Experience[] = [
     type: "Full-time",
     period: "Feb 2024 - Present",
     description:
-      "Multi-panel healthcare platform (Doctor / Patient / Admin) for appointment scheduling, medical records, and e-commerce services.",
-    highlights: [
-      "Built responsive UI using Next.js 15, TypeScript, TailwindCSS, Shadcn UI",
-      "Implemented API integration and caching using React Query + Axios",
-      "Designed form validation system using Zod",
-      "Worked in Agile environment with clean-code practices and reusable component design",
+      "Healthcare and dental technology company building multiple platforms for dental professionals, clinics, and patients.",
+    subProjects: [
+      {
+        title: "PACS (Practice Administration & Clinic System)",
+        description:
+          "Comprehensive clinic and practice management system designed to streamline daily operations for medical and dental clinics.",
+        highlights: [
+          "Built responsive and modern user interfaces for clinic management workflows",
+          "Developed interactive calendar and scheduling system using FullCalendar",
+          "Implemented patient and appointment management modules",
+          "Created reusable and scalable components with focus on performance and maintainability",
+          "Integrated API services and state management solutions for efficient data handling",
+          "Designed modern and user-friendly experience for clinic staff and administrators",
+        ],
+        tech: ["React 19", "TypeScript", "Redux Toolkit", "React Router 7", "Tailwind CSS 4", "HeroUI", "FullCalendar"],
+      },
     ],
-    tech: ["Next.js 15", "TypeScript", "TailwindCSS", "Shadcn UI", "React Query", "Zod"],
+    tech: ["React.js", "Next.js 15", "TypeScript", "TailwindCSS", "Redux Toolkit", "TanStack Query"],
   },
   {
     company: "MoshaVeremon",

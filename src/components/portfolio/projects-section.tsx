@@ -87,6 +87,26 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "PACS",
+    subtitle: "Smart Dentistry",
+    description:
+      "Practice Administration & Clinic System — a comprehensive clinic and practice management system for patient records, appointment scheduling, clinic workflows, and staff management with interactive calendar.",
+    image: "/projects/pacs.webp",
+    period: "Feb 2024 - Present",
+    location: "Mashhad, Iran",
+    type: "Full-time",
+    users: "Active Platform",
+    tech: ["React 19", "TypeScript", "Redux Toolkit", "React Router 7", "Tailwind CSS 4", "HeroUI", "FullCalendar", "Framer Motion", "Vite"],
+    features: [
+      "Interactive calendar and scheduling system using FullCalendar",
+      "Patient records and medical information management",
+      "Appointment scheduling, reminders, and time management",
+      "Clinic workflows and administrative process management",
+      "Reusable and scalable components with performance focus",
+      "Modern user-friendly experience for clinic staff and administrators",
+    ],
+  },
+  {
     title: "MoshaVeremon",
     subtitle: "Real Estate Platform",
     description:
