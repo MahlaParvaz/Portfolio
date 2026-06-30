@@ -185,8 +185,22 @@ const experiences: Experience[] = [
     type: "Internship",
     period: "Jun 2024 - Sep 2024",
     description:
-      "AI and infrastructure platform with 2,000+ users for server, CPU, GPU, and AI solutions.",
+      "AI and infrastructure technology company providing hardware resource-sharing, AI subscription services, and intelligent surveillance solutions with 2,000+ active users.",
     subProjects: [
+      {
+        title: "AiBox – AI & Cloud Resource-Sharing Platform",
+        description:
+          "A comprehensive platform enabling users to rent and manage servers, CPUs, GPUs, and AI-powered services. Provides an online marketplace for computing resources with subscription-based access to AI models and tools.",
+        highlights: [
+          "Built the main AiBox user-facing platform for browsing, renting, and managing hardware resources",
+          "Developed server and GPU rental interfaces with real-time availability and pricing",
+          "Implemented AI subscription package purchasing and management workflows",
+          "Created user dashboards for tracking resource usage, active services, and billing history",
+          "Integrated REST API endpoints via Swagger documentation",
+          "Collaborated in Agile environment using Jira for task management and GitLab for version control",
+        ],
+        tech: ["Next.js 13-14", "TypeScript", "Material-UI", "Redux", "Zustand"],
+      },
       {
         title: "Roobin – AI Surveillance Platform",
         description:
