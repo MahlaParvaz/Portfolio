@@ -52,6 +52,21 @@ const experiences: Experience[] = [
         tech: ["Vue 3", "XState", "TypeScript", "Pinia", "Sass", "Sentry"],
       },
       {
+        title: "DSS Admin Panel – Digital Signature Administration Platform",
+        description:
+          "Centralized administration system for managing digital certificates, payments, businesses, and signature requests across the digital signature ecosystem.",
+        highlights: [
+          "Implemented comprehensive administration dashboard for certificate and payment management",
+          "Developed business onboarding and configuration workflows using SSP platform configs",
+          "Built modules for managing digital signature requests and their full lifecycle",
+          "Enabled monitoring of issued certificates and their statuses across signature clients",
+          "Tracked payment transactions and payment statuses within the digital signature ecosystem",
+          "Added Progressive Web App (PWA) support for installable app-like experience on SSL environments",
+          "Participated in creating and maintaining technical documentation and deployment procedures",
+        ],
+        tech: ["Vue.js 3.5", "Vite", "Vue Router", "Pinia", "Axios", "PWA", "TypeScript"],
+      },
+      {
         title: "DSS (Digital Signature System)",
         description:
           "Internal enterprise platform for managing certificates, HSM devices, and organizational signing infrastructure.",
@@ -89,6 +104,62 @@ const experiences: Experience[] = [
         ],
         tech: ["React 19", "TypeScript", "Redux Toolkit", "React Router 7", "Tailwind CSS 4", "HeroUI", "FullCalendar"],
       },
+      {
+        title: "DeventApp Platform",
+        description:
+          "Comprehensive platform for dental professionals providing access to dental events, congresses, educational content, products, and business opportunities.",
+        highlights: [
+          "Designed and implemented job posting and recruitment functionalities",
+          "Built resume submission and management system",
+          "Developed user profile and account management features",
+          "Implemented favorites and bookmarking capabilities",
+          "Created contact and communication features",
+          "Built resume categorization and organization system",
+          "Developed corresponding Admin Panel for managing job listings, resumes, and platform data",
+        ],
+        tech: ["React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "TanStack Query"],
+      },
+      {
+        title: "Devent Admin Panel",
+        description:
+          "Admin Panel for DeventApp — a comprehensive management platform used to administer and moderate the entire dental community ecosystem.",
+        highlights: [
+          "Managed dental events, congresses, and educational content administration",
+          "Built job postings and recruitment listings management modules",
+          "Developed advertisement and user-generated content moderation workflows",
+          "Created administrative workflows for reviewing, approving, editing, and publishing content",
+          "Implemented management tools for users, resumes, and business-related information",
+          "Built responsive and user-friendly administrative interfaces to streamline content operations",
+        ],
+        tech: ["React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "TanStack Query"],
+      },
+      {
+        title: "Cloudent – Clinic Management System",
+        description:
+          "Internal dental clinic management system for Dr. Mola's dental clinic, replacing manual appointment processes and streamlining daily operations.",
+        highlights: [
+          "Built patient record and profile management system",
+          "Developed appointment scheduling and time management features",
+          "Implemented comprehensive patient information and treatment history display",
+          "Created advanced search functionality for patients and appointments",
+          "Built interactive dental charting system with visual tooth diagram for recording conditions",
+          "Enabled digital data entry by clinic receptionists to reduce paper-based processes",
+          "Significantly improved patient data management and scheduling workflows",
+        ],
+        tech: ["React.js", "Redux Toolkit", "Tailwind CSS", "TypeScript", "Persian Date Picker"],
+      },
+      {
+        title: "DRI 2717 (2717)",
+        description:
+          "Multi-panel healthcare platform (Doctor / Patient / Admin) for appointment scheduling, medical records, and e-commerce services.",
+        highlights: [
+          "Built responsive UI using Next.js 15, TypeScript, TailwindCSS, Shadcn UI",
+          "Implemented API integration and caching using React Query + Axios",
+          "Designed form validation system using Zod",
+          "Worked in Agile environment with clean-code practices and reusable component design",
+        ],
+        tech: ["Next.js 15", "TypeScript", "TailwindCSS", "Shadcn UI", "React Query", "Zod"],
+      },
     ],
     tech: ["React.js", "Next.js 15", "TypeScript", "TailwindCSS", "Redux Toolkit", "TanStack Query"],
   },
@@ -108,18 +179,29 @@ const experiences: Experience[] = [
     tech: ["Next.js 14", "TypeScript", "Zustand", "TailwindCSS"],
   },
   {
-    company: "Nextera Factory",
+    company: "Nextera Factory (AiBox)",
     location: "Tehran, Iran",
     role: "Front-End Developer",
     type: "Internship",
     period: "Jun 2024 - Sep 2024",
     description:
       "AI and infrastructure platform with 2,000+ users for server, CPU, GPU, and AI solutions.",
-    highlights: [
-      "Developed Aibox resource-sharing system using Next.js 13 + Redux",
-      "Built AI-based access system (Roobin) using Zustand + Material UI",
-      "Integrated REST APIs via Swagger documentation",
-      "Collaborated in Agile team using Jira & GitLab",
+    subProjects: [
+      {
+        title: "AiBox Admin Panel",
+        description:
+          "Centralized administration platform for managing the entire AIBox ecosystem and its operational processes.",
+        highlights: [
+          "Built user management module including account monitoring and administration",
+          "Developed management of purchased AI subscription packages and service plans",
+          "Implemented gift credits and consumption monitoring system",
+          "Created tracking for hosting and server purchases and related resources",
+          "Built system usage statistics and user activity dashboards",
+          "Developed platform configuration, subscription, and operational data management",
+          "Built administrative dashboards and tools to streamline management and decision-making",
+        ],
+        tech: ["Next.js 13", "TypeScript", "Tailwind CSS", "Redux Toolkit", "TanStack Query"],
+      },
     ],
     tech: ["Next.js 13-14", "TypeScript", "Material-UI", "Redux", "Zustand"],
   },
