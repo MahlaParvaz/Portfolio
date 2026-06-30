@@ -40,6 +40,27 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "DSS Admin Panel",
+    subtitle: "Digital Signature Administration",
+    description:
+      "Centralized administration system for managing digital certificates, payments, businesses, and signature requests across the digital signature ecosystem with PWA support.",
+    image: "/projects/dss-system.webp",
+    period: "2025 - Present",
+    location: "Iran",
+    type: "Full-time",
+    users: "Enterprise Platform",
+    tech: ["Vue.js 3.5", "Vite", "Vue Router", "Pinia", "Axios", "PWA", "TypeScript"],
+    features: [
+      "Comprehensive administration dashboard for certificate and payment management",
+      "Business onboarding and configuration workflows using SSP platform configs",
+      "Full lifecycle management for digital signature requests",
+      "Monitoring of issued certificates and statuses across signature clients",
+      "Payment transaction tracking and status management",
+      "Progressive Web App (PWA) support for installable experience",
+      "Technical documentation and deployment procedures maintenance",
+    ],
+  },
+  {
     title: "Web-Signature Platform",
     subtitle: "Enterprise Digital Signing",
     description:
@@ -87,6 +108,26 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "Devent Admin Panel",
+    subtitle: "Smart Dentistry",
+    description:
+      "Admin panel for DeventApp — a comprehensive management platform for administering and moderating the entire dental community ecosystem including events, jobs, and content.",
+    image: "/projects/smart-dentistry.webp",
+    period: "Feb 2024 - Present",
+    location: "Mashhad, Iran",
+    type: "Full-time",
+    users: "Active Platform",
+    tech: ["React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "TanStack Query"],
+    features: [
+      "Dental events, congresses, and educational content administration",
+      "Job postings and recruitment listings management",
+      "Advertisement and user-generated content moderation workflows",
+      "Reviewing, approving, editing, and publishing content workflows",
+      "Management tools for users, resumes, and business information",
+      "Responsive administrative interfaces for streamlined content operations",
+    ],
+  },
+  {
     title: "PACS",
     subtitle: "Smart Dentistry",
     description:
@@ -104,6 +145,26 @@ const projects: Project[] = [
       "Clinic workflows and administrative process management",
       "Reusable and scalable components with performance focus",
       "Modern user-friendly experience for clinic staff and administrators",
+    ],
+  },
+  {
+    title: "AiBox Admin Panel",
+    subtitle: "Nextera Factory",
+    description:
+      "Centralized administration platform for managing the entire AIBox ecosystem — user management, AI subscription packages, gift credits, hosting resources, and operational dashboards.",
+    image: "/projects/nextera-factory.webp",
+    period: "Jun 2024 - Sep 2024",
+    location: "Tehran, Iran",
+    type: "Internship",
+    users: "2,000+ Users",
+    tech: ["Next.js 13", "TypeScript", "Tailwind CSS", "Redux Toolkit", "TanStack Query"],
+    features: [
+      "User management module with account monitoring and administration",
+      "AI subscription packages and service plans management",
+      "Gift credits and consumption monitoring system",
+      "Hosting and server purchases tracking with resource management",
+      "System usage statistics and user activity dashboards",
+      "Platform configuration, subscription, and operational data management",
     ],
   },
   {

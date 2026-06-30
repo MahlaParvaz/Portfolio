@@ -138,3 +138,30 @@ Stage Summary:
 - Unused API route removed
 - FadeInView uses GPU-accelerated will-change only during animation
 - Browser verification passed: all sections render, project modal opens/closes correctly, theme toggle works, nav scrolling works, experience sub-projects expand/collapse, zero console errors
+
+---
+Task ID: 3
+Agent: Main
+Task: Fix Featured Work section — restore missing project cards
+
+Work Log:
+- Identified 3 missing project cards in the Featured Work section: DSS Admin Panel, Devent Admin Panel, AiBox Admin Panel
+- Added DSS Admin Panel card (after DSS System, before Web-Signature) with 7 features, Vue.js 3.5 tech stack
+- Added Devent Admin Panel card (after Smart Dentistry 2717, before PACS) with 6 features, React.js tech stack
+- Added AiBox Admin Panel card (after PACS, before MoshaVeremon) with 6 features, Next.js 13 tech stack
+- Used parent company images as fallbacks (dss-system.webp, smart-dentistry.webp, nextera-factory.webp) since original admin panel screenshots don't exist on disk
+- Verified experience section already has correct sub-projects structure with all entries intact
+- Lint passes clean, server compiles with 200 response
+
+Stage Summary:
+- Featured Work section restored to 9 project cards:
+  1. DSS (Digital Signature System)
+  2. DSS Admin Panel (NEW)
+  3. Web-Signature Platform
+  4. Smart Dentistry (DRI 2717)
+  5. Devent Admin Panel (NEW)
+  6. PACS
+  7. AiBox Admin Panel (NEW)
+  8. MoshaVeremon
+  9. Nextera Factory
+- Experience section confirmed correct with all sub-projects
