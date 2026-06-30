@@ -229,7 +229,7 @@ const projects: Project[] = [
     subtitle: "Nextera Factory",
     description:
       "AI-powered surveillance and facial recognition platform for monitoring security cameras and managing employee attendance verification with real-time WebSocket communication.",
-    image: "/projects/roobin.jpeg",
+    image: "/projects/roobin.webp",
     period: "Jun 2024 - Sep 2024",
     location: "Tehran, Iran",
     type: "Internship",

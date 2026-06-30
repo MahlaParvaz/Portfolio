@@ -109,7 +109,7 @@ export function HeroSection() {
           <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 blur-sm" />
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl">
             <Image
-              src="/me.jpg"
+              src="/me.webp"
               alt="Mahla Zohourparvaz"
               fill
               className="object-cover object-top"
