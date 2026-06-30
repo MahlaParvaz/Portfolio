@@ -220,9 +220,29 @@ const projects: Project[] = [
     tech: ["Next.js 13-14", "TypeScript", "Material-UI", "Redux", "Zustand", "Swagger"],
     features: [
       "Aibox: Hardware resource-sharing platform",
-      "Roobin: AI-powered employee access control system",
       "REST API integration via Swagger documentation",
       "Agile collaboration with Jira & GitLab",
+    ],
+  },
+  {
+    title: "Roobin",
+    subtitle: "Nextera Factory",
+    description:
+      "AI-powered surveillance and facial recognition platform for monitoring security cameras and managing employee attendance verification with real-time WebSocket communication.",
+    image: "/projects/roobin.jpeg",
+    period: "Jun 2024 - Sep 2024",
+    location: "Tehran, Iran",
+    type: "Internship",
+    users: "2,000+ Users",
+    tech: ["Next.js 14", "React.js", "TypeScript", "Material UI", "TanStack Query", "Zustand", "Axios", "React Hook Form", "React Use WebSocket", "Chart.js", "Storybook"],
+    features: [
+      "Real-time monitoring and management of surveillance cameras",
+      "AI-based facial recognition and identity verification",
+      "Employee entry/exit image comparison with stored profiles and similarity percentages",
+      "Live and recorded video streaming from surveillance cameras",
+      "Storage and management of surveillance footage and related files",
+      "Dashboards and analytics for monitoring recognition results and attendance activities",
+      "Real-time updates and communication using WebSockets",
     ],
   },
   {

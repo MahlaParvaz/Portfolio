@@ -188,6 +188,21 @@ const experiences: Experience[] = [
       "AI and infrastructure platform with 2,000+ users for server, CPU, GPU, and AI solutions.",
     subProjects: [
       {
+        title: "Roobin – AI Surveillance Platform",
+        description:
+          "AI-powered surveillance and facial recognition platform for monitoring security cameras and managing employee attendance verification.",
+        highlights: [
+          "Developed responsive dashboards and analytics for monitoring recognition results and attendance activities",
+          "Integrated real-time camera feeds with live and recorded video streaming from surveillance cameras",
+          "Implemented facial recognition result interfaces with similarity percentage displays",
+          "Built tools for video and file management of surveillance footage",
+          "Real-time updates and communication using WebSockets",
+          "Comparison of employee entry/exit images with stored profiles",
+          "Built charts and analytics dashboards using Chart.js for attendance monitoring",
+        ],
+        tech: ["Next.js 14", "React.js", "TypeScript", "Material UI", "TanStack Query", "Zustand", "Axios", "React Hook Form", "React Use WebSocket", "Chart.js", "Storybook"],
+      },
+      {
         title: "AiBox Admin Panel",
         description:
           "Centralized administration platform for managing the entire AIBox ecosystem and its operational processes.",
