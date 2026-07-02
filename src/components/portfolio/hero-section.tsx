@@ -69,7 +69,7 @@ export function HeroSection() {
           >
             Front-End Developer{" "}
             <span className="text-muted-foreground/60 text-base sm:text-lg lg:text-xl font-normal">
-              (Vue / React / Frontend Architect)
+              (React / Next.js / Frontend Architect)
             </span>
           </motion.p>
 
@@ -77,7 +77,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-base sm:text-lg text-muted-foreground/80 max-w-xl mb-10 leading-relaxed md:mx-0 mx-auto"
           >
-            Building scalable enterprise web applications with Vue 3, React,
+            Building scalable enterprise web applications with React,
             Next.js, and TypeScript. Specializing in state-driven architectures,
             dynamic routing systems, and modular frontend design.
           </motion.p>
@@ -134,8 +134,8 @@ export function HeroSection() {
             transition={{ delay: 1.1, duration: 0.5, ease: "easeOut" }}
             className="absolute -top-2 -left-2 sm:top-0 sm:-left-4 lg:-top-2 lg:-left-6 bg-card border border-border rounded-xl px-3 py-2 shadow-lg"
           >
-            <p className="text-xs font-semibold text-primary">Vue 3</p>
-            <p className="text-[10px] text-muted-foreground">& React</p>
+            <p className="text-xs font-semibold text-primary">React</p>
+            <p className="text-[10px] text-muted-foreground">& Next.js</p>
           </motion.div>
         </motion.div>
       </motion.div>

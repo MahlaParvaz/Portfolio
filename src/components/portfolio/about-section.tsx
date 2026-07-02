@@ -2,7 +2,7 @@
 
 import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
-import { Cpu, Layers, Shield, Workflow } from "lucide-react";
+import { Cpu, Layers, Shield, Workflow, Globe, HeartPulse } from "lucide-react";
 
 const highlights = [
   {
@@ -13,9 +13,9 @@ const highlights = [
   },
   {
     icon: Layers,
-    title: "Enterprise Systems",
+    title: "Multi-Framework Expertise",
     description:
-      "Building production-grade interfaces for large organizations with focus on maintainability, modular architecture, and PWA-ready systems.",
+      "Fluent across Vue 3 and React/Next.js ecosystems — building production applications with the right tool for each project's needs.",
   },
   {
     icon: Shield,
@@ -28,6 +28,18 @@ const highlights = [
     title: "SDD Workflow",
     description:
       "Applying Spec-Driven Development and agentic frontend patterns to map requirements to behavior to UI flow with structured, traceable implementation.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Healthcare & Enterprise",
+    description:
+      "Delivered 6+ production systems in dental healthcare — from patient scheduling to AI surveillance — serving clinics and thousands of end users.",
+  },
+  {
+    icon: Globe,
+    title: "Real-Time Systems",
+    description:
+      "Building live camera feeds, WebSocket-driven dashboards, and real-time collaboration tools for time-critical operational environments.",
   },
 ];
 
@@ -45,32 +57,43 @@ export function AboutSection() {
               <span className="text-foreground font-semibold">
                 Mahla Zohourparvaz
               </span>
-              , a Front-End Developer with over{" "}
+              , a Front-End Developer with{" "}
               <span className="text-primary font-semibold">2+ years</span> of
-              experience building scalable enterprise web applications. I work
-              across{" "}
+              experience building production-grade enterprise web applications. I
+              specialize in{" "}
               <span className="text-foreground font-semibold">
-                Vue 3, React, Next.js
+                Vue 3
               </span>{" "}
               and{" "}
               <span className="text-foreground font-semibold">
-                TypeScript
-              </span>
-              , with exposure to frontend architecture patterns.
+                React / Next.js
+              </span>{" "}
+              ecosystems, with deep expertise in{" "}
+              <span className="text-foreground font-semibold">TypeScript</span>
+              , complex state management, and scalable frontend architecture.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              My recent work at PART Software Group involves designing
-              state-machine-driven architectures with XState, building
-              enterprise digital signature systems used by 1,000+ users, and
-              implementing Spec-Driven Development workflows. I&apos;ve also
-              built healthcare platforms, real estate applications, and AI-powered
-              infrastructure tools.
+              I&apos;ve built and contributed to{" "}
+              <span className="text-primary font-semibold">
+                12+ production projects
+              </span>{" "}
+              across digital security, healthcare, real estate, and AI
+              platforms — serving 1,000+ enterprise users at PART Software
+              Group and delivering 6+ systems for Smart Dentistry&apos;s dental
+              ecosystem.
             </p>
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-              I&apos;m passionate about structured architecture, clean code
-              principles, and bridging the gap between business requirements and
-              robust frontend implementations. I thrive in Agile environments
-              and enjoy tackling complex architectural challenges.
+              At PART Software, I design state-machine-driven architectures with
+              XState and practice Spec-Driven Development — bridging business
+              requirements to structured, traceable implementations. I&apos;ve
+              also built real-time surveillance dashboards with WebSocket feeds,
+              interactive calendar systems, dental charting interfaces, and
+              comprehensive admin panels.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+              I thrive in Agile environments, value clean code and modular
+              design, and enjoy turning complex architectural challenges into
+              elegant, maintainable solutions.
             </p>
           </FadeInView>
 

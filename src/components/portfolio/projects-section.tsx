@@ -23,11 +23,11 @@ const projects: Project[] = [
     description:
       "A complex enterprise system for digital signing, certificate workflows, and secure document processing. Built with state machine-driven architecture using XState, featuring state-driven routing and SDD workflow.",
     image: "/projects/web-signature.webp",
-    period: "2025 - Present",
+    period: "Nov 2025 - Present",
     location: "Iran",
     type: "Full-time",
     users: "1,000+ Users",
-    tech: ["Vue 3", "XState", "TypeScript", "Pinia", "Sass", "Sentry", "PWA"],
+    tech: ["Vue 3", "XState", "Pinia", "Vue Router", "SCSS", "Axios", "Sentry", "Vite", "PWA"],
     features: [
       "State machine–driven architecture using XState for complex workflows",
       "State-driven routing system derived from state machine configuration",
@@ -45,11 +45,11 @@ const projects: Project[] = [
     description:
       "Centralized administration system for managing digital certificates, payments, businesses, and signature requests across the digital signature ecosystem with PWA support.",
     image: "/projects/dss-admin-panel.webp",
-    period: "2025 - Present",
+    period: "Nov 2025 - Present",
     location: "Iran",
     type: "Full-time",
     users: "Enterprise Platform",
-    tech: ["Vue.js 3.5", "Vite", "Vue Router", "Pinia", "Axios", "PWA", "TypeScript"],
+    tech: ["Vue 3", "Vite", "Vue Router", "Pinia", "Axios", "PWA"],
     features: [
       "Comprehensive administration dashboard for certificate and payment management",
       "Business onboarding and configuration workflows using SSP platform configs",
@@ -66,11 +66,11 @@ const projects: Project[] = [
     description:
       "Internal enterprise platform for managing digital certificates, HSM devices, and organizational signing infrastructure. Features a polished dark-themed admin dashboard, login system with security illustration, and comprehensive certificate/HSM management workflows.",
     image: "/projects/dss-system.webp",
-    period: "2025 - Present",
+    period: "Nov 2025 - Present",
     location: "Iran",
     type: "Full-time",
     users: "1,000+ Users",
-    tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
+    tech: ["Vue 3", "Sass", "Pinia"],
     features: [
       "Secure login system with security-themed illustrations and dark UI",
       "Dashboard with data tables for certificate management and monitoring",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     description:
       "Multi-panel healthcare platform (Doctor / Patient / Admin) for appointment scheduling, medical records, and e-commerce services with responsive UI and clean architecture.",
     image: "/projects/smart-dentistry.webp",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",
@@ -114,7 +114,7 @@ const projects: Project[] = [
     description:
       "Comprehensive platform for dental professionals providing access to dental events, congresses, educational content, products, and business opportunities.",
     image: "/projects/deventapp.webp",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",
@@ -135,7 +135,7 @@ const projects: Project[] = [
     description:
       "Admin Panel for DeventApp — a comprehensive management platform used to administer and moderate the entire dental community ecosystem.",
     image: "/projects/devent-admin-panel.webp",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",
@@ -155,7 +155,7 @@ const projects: Project[] = [
     description:
       "Internal dental clinic management system for Dr. Mola's dental clinic, replacing manual appointment processes and streamlining daily operations.",
     image: "/projects/cloudent.webp",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",
@@ -176,7 +176,7 @@ const projects: Project[] = [
     description:
       "Practice Administration & Clinic System — a comprehensive clinic and practice management system designed to streamline daily operations for medical and dental clinics.",
     image: "/projects/pacs.webp",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",

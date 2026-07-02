@@ -31,7 +31,7 @@ const experiences: Experience[] = [
     location: "Iran",
     role: "Front-End Developer",
     type: "Full-time",
-    period: "2025 - Present",
+    period: "Nov 2025 - Present",
     description:
       "Working on enterprise internal systems including Digital Signature (DSS) and Web-Signature platform, used by 1,000+ users and large organizations for certificate management, HSM integration, and secure signing workflows.",
     subProjects: [
@@ -49,7 +49,7 @@ const experiences: Experience[] = [
           "Improved system observability using Sentry for production error tracking",
           "Contributed to PWA-ready frontend architecture for enterprise usage",
         ],
-        tech: ["Vue 3", "XState", "TypeScript", "Pinia", "Sass", "Sentry"],
+        tech: ["Vue 3", "XState", "Pinia", "Vue Router", "SCSS", "Axios", "Sentry", "Vite", "PWA"],
       },
       {
         title: "DSS Admin Panel – Digital Signature Administration Platform",
@@ -64,7 +64,7 @@ const experiences: Experience[] = [
           "Added Progressive Web App (PWA) support for installable app-like experience on SSL environments",
           "Participated in creating and maintaining technical documentation and deployment procedures",
         ],
-        tech: ["Vue.js 3.5", "Vite", "Vue Router", "Pinia", "Axios", "PWA", "TypeScript"],
+        tech: ["Vue 3", "Vite", "Vue Router", "Pinia", "Axios", "PWA"],
       },
       {
         title: "DSS (Digital Signature System)",
@@ -76,17 +76,17 @@ const experiences: Experience[] = [
           "Built reusable and modular frontend components",
           "Supported enterprise-scale usage across internal organizational systems",
         ],
-        tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
+        tech: ["Vue 3", "Sass", "Pinia"],
       },
     ],
-    tech: ["Vue 3", "XState", "TypeScript", "Pinia", "Sentry", "PWA"],
+    tech: ["Vue 3", "XState", "Pinia", "Sentry", "PWA"],
   },
   {
     company: "Smart Dentistry",
     location: "Mashhad, Iran",
     role: "Front-End Developer",
     type: "Full-time",
-    period: "Feb 2024 - Present",
+    period: "Feb 2025 - Dec 2025",
     description:
       "Healthcare and dental technology company building multiple platforms for dental professionals, clinics, and patients.",
     subProjects: [

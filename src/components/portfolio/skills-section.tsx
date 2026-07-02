@@ -3,91 +3,80 @@
 import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Badge } from "@/components/ui/badge";
+import {
+  Code2,
+  Workflow,
+  Layers,
+  Cable,
+  ClipboardCheck,
+  Palette,
+  Zap,
+  ShieldCheck,
+  Terminal,
+  Server,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface SkillCategory {
   title: string;
+  icon: LucideIcon;
   skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Core",
-    skills: ["Vue 3", "React.js", "Next.js (13–15)", "TypeScript", "JavaScript (ES6+)"],
+    title: "Frameworks & Languages",
+    icon: Code2,
+    skills: ["Vue 3", "React.js 18", "Next.js 13", "Next.js 14", "Next.js 15", "TypeScript", "JavaScript (ES6+)"],
   },
   {
-    title: "State & Architecture",
-    skills: [
-      "Pinia",
-      "Vue Router",
-      "XState",
-      "Server-driven UI",
-      "Agentic / SDD Workflow",
-      "File-type Architecture",
-      "Component-based Architecture",
-    ],
+    title: "State Management",
+    icon: Workflow,
+    skills: ["Pinia", "Vue Router", "XState", "Zustand", "React-Redux", "React Toolkit"],
   },
   {
-    title: "Data & API Layer",
-    skills: ["Axios", "React Query / TanStack Query", "REST APIs", "qs", "idb-keyval"],
+    title: "Architecture & Patterns",
+    icon: Layers,
+    skills: ["SDD (Spec Driven Dev)", "Agentic", "File-type Based", "Feature-based", "Atomic Design", "Component-based", "Monorepo", "Micro Frontend"],
+  },
+  {
+    title: "Data & Real-time",
+    icon: Cable,
+    skills: ["Axios", "React Query", "TanStack Query", "REST API", "WebSocket", "UUID"],
   },
   {
     title: "Forms & Validation",
-    skills: ["Vee-Validate", "Yup", "Zod", "@vee-validate/i18n"],
+    icon: ClipboardCheck,
+    skills: ["Vee-Validate", "Formik", "Yup", "Zod"],
   },
   {
     title: "UI & Styling",
-    skills: [
-      "TailwindCSS",
-      "Sass / SCSS",
-      "Material UI",
-      "Shadcn UI",
-      "floating-vue",
-      "vue-select",
-      "vue3-toastification",
-      "@formkit/auto-animate",
-    ],
+    icon: Palette,
+    skills: ["TailwindCSS", "SCSS / Sass", "Material UI 3", "Hero UI", "Shadcn", "vue-select"],
   },
   {
-    title: "Performance & PWA",
-    skills: [
-      "Vite",
-      "PWA (workbox)",
-      "Bundle Optimization",
-      "VueUse Composables",
-      "Webpack",
-    ],
+    title: "Build & Performance",
+    icon: Zap,
+    skills: ["Vite", "Webpack", "Bundle Optimize", "PWA", "Vue Composable"],
   },
   {
-    title: "Monitoring & Security",
-    skills: [
-      "Sentry",
-      "crypto-js",
-      "jose (JWT)",
-      "js-cookie",
-      "vue-simple-acl",
-    ],
+    title: "Security & Monitoring",
+    icon: ShieldCheck,
+    skills: ["Sentry", "jose (JWT)", "JWS", "Public Key", "Private Key", "Encoded Keys", "ACL"],
   },
   {
-    title: "Dev Tools & Workflow",
-    skills: [
-      "Git (GitHub / GitLab)",
-      "pnpm",
-      "ESLint / Prettier",
-      "CI/CD",
-      "Jira, Agile, Scrum",
-    ],
+    title: "DevOps & Workflow",
+    icon: Terminal,
+    skills: ["Git", "GitHub", "GitLab", "pnpm", "npm", "ESLint / Prettier", "CI/CD", "Jira", "Agile / Scrum", "Taskulu"],
   },
   {
     title: "System Knowledge",
-    skills: [
-      "PWA Architecture",
-      "Micro Frontend (exposure)",
-      "Server-driven UI",
-      "State Machine Navigation",
-      "Enterprise Patterns",
-    ],
+    icon: Server,
+    skills: ["PWA Architecture", "Sandbox Environment", "Machine Abstraction"],
   },
 ];
+
+const totalSkills = skillCategories.reduce((sum, cat) => sum + cat.skills.length, 0);
 
 export function SkillsSection() {
   return (
@@ -96,30 +85,40 @@ export function SkillsSection() {
         <SectionHeading
           label="Skills"
           title="My Tech Stack"
-          description="Technologies and architectural patterns I work with."
+          description={`${totalSkills}+ technologies, tools, and patterns I work with daily.`}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {skillCategories.map((category, i) => (
-            <FadeInView key={category.title} delay={i * 60}>
-              <div className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all duration-300 group h-full">
-                <h3 className="font-semibold text-foreground mb-3 text-sm group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {category.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="text-xs font-normal"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+          {skillCategories.map((category, i) => {
+            const Icon = category.icon;
+
+            return (
+              <FadeInView key={category.title} delay={i * 50}>
+                <div className="p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group min-h-45 h-full flex flex-col">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary shrink-0 group-hover:bg-primary/15 transition-colors duration-300">
+                      <Icon className="w-4.5 h-4.5" />
+                    </div>
+                    <h3 className="font-semibold text-foreground text-sm leading-tight group-hover:text-primary transition-colors duration-300">
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {category.skills.map((skill) => (
+                      <Badge
+                        key={skill}
+                        variant="secondary"
+                        className="text-xs font-normal"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </FadeInView>
-          ))}
+              </FadeInView>
+            );
+          })}
         </div>
       </div>
     </section>
