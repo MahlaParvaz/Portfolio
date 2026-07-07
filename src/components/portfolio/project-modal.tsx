@@ -8,6 +8,7 @@ import {
   Calendar,
   MapPin,
   Users,
+  ExternalLink,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -22,6 +23,7 @@ export interface Project {
   users: string;
   tech: string[];
   features: string[];
+  link?: string;
 }
 
 export function ProjectModal({
@@ -125,6 +127,18 @@ export function ProjectModal({
               ))}
             </div>
           </div>
+
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Visit Project
+            </a>
+          )}
         </div>
       </motion.div>
     </motion.div>

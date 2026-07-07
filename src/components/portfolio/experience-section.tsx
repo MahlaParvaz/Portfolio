@@ -3,7 +3,8 @@
 import { FadeInView } from "./fade-in";
 import { SectionHeading } from "./section-heading";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 interface SubProject {
@@ -11,10 +12,12 @@ interface SubProject {
   description: string;
   highlights: string[];
   tech: string[];
+  link?: string;
 }
 
 interface Experience {
   company: string;
+  companyLink?: string;
   location: string;
   role: string;
   type: string;
@@ -28,10 +31,11 @@ interface Experience {
 const experiences: Experience[] = [
   {
     company: "PART Software Group",
+    companyLink:"https://www.partsoftware.com/",
     location: "Iran",
     role: "Front-End Developer",
     type: "Full-time",
-    period: "Nov 2025 - Present",
+    period: "2025 - Present",
     description:
       "Working on enterprise internal systems including Digital Signature (DSS) and Web-Signature platform, used by 1,000+ users and large organizations for certificate management, HSM integration, and secure signing workflows.",
     subProjects: [
@@ -39,6 +43,7 @@ const experiences: Experience[] = [
         title: "Web-Signature Platform",
         description:
           "A complex enterprise system for digital signing, certificate workflows, and secure document processing.",
+        link: "https://sign.farashenasa.ir/#/",
         highlights: [
           "Designed and implemented state machine–driven architecture using XState",
           "Built state-driven routing system where navigation is derived from state machine configuration",
@@ -55,6 +60,7 @@ const experiences: Experience[] = [
         title: "DSS Admin Panel – Digital Signature Administration Platform",
         description:
           "Centralized administration system for managing digital certificates, payments, businesses, and signature requests across the digital signature ecosystem.",
+        link: "https://pki.farashenasa.ir/#/login",
         highlights: [
           "Implemented comprehensive administration dashboard for certificate and payment management",
           "Developed business onboarding and configuration workflows using SSP platform configs",
@@ -64,7 +70,7 @@ const experiences: Experience[] = [
           "Added Progressive Web App (PWA) support for installable app-like experience on SSL environments",
           "Participated in creating and maintaining technical documentation and deployment procedures",
         ],
-        tech: ["Vue 3", "Vite", "Vue Router", "Pinia", "Axios", "PWA"],
+        tech: ["Vue.js 3.5", "Vite", "Vue Router", "Pinia", "Axios", "PWA", "TypeScript"],
       },
       {
         title: "DSS (Digital Signature System)",
@@ -76,17 +82,18 @@ const experiences: Experience[] = [
           "Built reusable and modular frontend components",
           "Supported enterprise-scale usage across internal organizational systems",
         ],
-        tech: ["Vue 3", "Sass", "Pinia"],
+        tech: ["Vue 3", "TypeScript", "Sass", "Pinia"],
       },
     ],
-    tech: ["Vue 3", "XState", "Pinia", "Sentry", "PWA"],
+    tech: ["Vue 3", "XState", "TypeScript", "Pinia", "Sentry", "PWA"],
   },
   {
     company: "Smart Dentistry",
+    companyLink: "https://www.smart-lab.ir/",
     location: "Mashhad, Iran",
     role: "Front-End Developer",
     type: "Full-time",
-    period: "Feb 2025 - Dec 2025",
+    period: "Feb 2024 - Present",
     description:
       "Healthcare and dental technology company building multiple platforms for dental professionals, clinics, and patients.",
     subProjects: [
@@ -108,6 +115,7 @@ const experiences: Experience[] = [
         title: "DeventApp Platform",
         description:
           "Comprehensive platform for dental professionals providing access to dental events, congresses, educational content, products, and business opportunities.",
+        link: "https://www.deventapp.ir/",
         highlights: [
           "Designed and implemented job posting and recruitment functionalities",
           "Built resume submission and management system",
@@ -123,6 +131,7 @@ const experiences: Experience[] = [
         title: "Devent Admin Panel",
         description:
           "Admin Panel for DeventApp — a comprehensive management platform used to administer and moderate the entire dental community ecosystem.",
+        link: "https://admin.deventapp.ir/",
         highlights: [
           "Managed dental events, congresses, and educational content administration",
           "Built job postings and recruitment listings management modules",
@@ -180,6 +189,7 @@ const experiences: Experience[] = [
   },
   {
     company: "Nextera Factory (AiBox)",
+    companyLink: "https://www.nexterafactory.com/en/homepage/",
     location: "Tehran, Iran",
     role: "Front-End Developer",
     type: "Internship",
@@ -191,6 +201,7 @@ const experiences: Experience[] = [
         title: "AiBox – AI & Cloud Resource-Sharing Platform",
         description:
           "A comprehensive platform enabling users to rent and manage servers, CPUs, GPUs, and AI-powered services. Provides an online marketplace for computing resources with subscription-based access to AI models and tools.",
+        link: "https://nextaibox.com/",
         highlights: [
           "Built the main AiBox user-facing platform for browsing, renting, and managing hardware resources",
           "Developed server and GPU rental interfaces with real-time availability and pricing",
@@ -252,6 +263,18 @@ function SubProjectCard({ project, index }: { project: SubProject; index: number
             <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">{project.description}</p>
           </div>
           <div className="flex items-center gap-2 shrink-0 ml-4">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="p-1 rounded-md hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={`Visit ${project.title}`}
+              >
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            )}
             <div className="hidden sm:flex flex-wrap gap-1">
               {project.tech.slice(0, 3).map((t) => (
                 <Badge key={t} variant="secondary" className="text-[10px] font-normal px-1.5 py-0">
@@ -296,6 +319,18 @@ function SubProjectCard({ project, index }: { project: SubProject; index: number
                   </Badge>
                 ))}
               </div>
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium hover:bg-primary/90 transition-colors w-fit"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  Visit Project
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -344,6 +379,17 @@ export function ExperienceSection() {
                           <p className="text-primary font-medium text-sm">
                             {exp.role}
                           </p>
+                        {exp.companyLink && (
+                          <Link
+                            href={exp.companyLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-sm text-primary hover:underline"
+                            >
+                             Visit Company
+                             <ExternalLink className="h-3 w-3" />
+                           </Link>
+                         )}
                         </div>
                         <Badge
                           variant="outline"

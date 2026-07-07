@@ -38,6 +38,7 @@ const projects: Project[] = [
       "Sentry-powered production error tracking and observability",
       "PWA-ready frontend architecture for enterprise usage",
     ],
+    link: "https://sign.farashenasa.ir/#/",
   },
   {
     title: "DSS Admin Panel",
@@ -59,6 +60,7 @@ const projects: Project[] = [
       "Progressive Web App (PWA) support for installable experience",
       "Technical documentation and deployment procedures maintenance",
     ],
+    link: "https://pki.farashenasa.ir/#/login",
   },
   {
     title: "DSS (Digital Signature System)",
@@ -92,14 +94,7 @@ const projects: Project[] = [
     location: "Mashhad, Iran",
     type: "Full-time",
     users: "Active Platform",
-    tech: [
-      "Next.js 15",
-      "TypeScript",
-      "TailwindCSS",
-      "Shadcn UI",
-      "React Query",
-      "Zod",
-    ],
+    tech: ["Next.js 15", "TypeScript", "TailwindCSS", "Shadcn UI", "React Query", "Zod"],
     features: [
       "Three-panel architecture: Doctor, Patient, and Admin",
       "Responsive UI built with Next.js 15, TypeScript, TailwindCSS, Shadcn UI",
@@ -128,6 +123,7 @@ const projects: Project[] = [
       "Resume categorization and organization system",
       "Corresponding Admin Panel for managing job listings, resumes, and platform data",
     ],
+    link: "https://www.deventapp.ir/",
   },
   {
     title: "Devent Admin Panel",
@@ -148,6 +144,7 @@ const projects: Project[] = [
       "Management tools for users, resumes, and business-related information",
       "Responsive administrative interfaces for streamlined content operations",
     ],
+    link: "https://admin.deventapp.ir/",
   },
   {
     title: "Cloudent",
@@ -223,6 +220,7 @@ const projects: Project[] = [
       "REST API integration via Swagger documentation",
       "Agile collaboration with Jira & GitLab",
     ],
+    link: "https://nextaibox.com/",
   },
   {
     title: "Roobin",
