@@ -1,59 +1,52 @@
-"use client";
+'use client';
 
-import { FadeInView } from "./fade-in";
-import { SectionHeading } from "./section-heading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { FadeInView } from './fade-in';
+import { SectionHeading } from './section-heading';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 import {
   Mail,
-  Phone,
   Send,
   Github,
   Linkedin,
   MapPin,
   CheckCircle2,
   Loader2,
-} from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+} from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { useState } from 'react';
 
 const contactInfo = [
   {
     icon: Mail,
-    label: "Email",
-    value: "mahla.zph@gmail.com",
-    href: "mailto:mahla.zph@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+98 915 227 0443",
-    href: "tel:+989152270443",
+    label: 'Email',
+    value: 'mahla.zph@gmail.com',
+    href: 'mailto:mahla.zph@gmail.com',
   },
   {
     icon: Github,
-    label: "GitHub",
-    value: "github.com/MahlaParvaz",
-    href: "https://github.com/MahlaParvaz",
+    label: 'GitHub',
+    value: 'github.com/MahlaParvaz',
+    href: 'https://github.com/MahlaParvaz',
   },
   {
     icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/mahla-parvaz",
-    href: "https://linkedin.com/in/mahla-parvaz",
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/mahla-parvaz',
+    href: 'https://linkedin.com/in/mahla-parvaz',
   },
   {
     icon: MapPin,
-    label: "Location",
-    value: "Mashhad, Iran",
+    label: 'Location',
+    value: 'Mashhad, Iran',
     href: undefined,
   },
 ];
 
 export function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const { toast } = useToast();
@@ -63,34 +56,34 @@ export function ContactSection() {
 
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast({
-        title: "Please fill in all fields",
-        variant: "destructive",
+        title: 'Please fill in all fields',
+        variant: 'destructive',
       });
       return;
     }
 
     setSending(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
 
-      if (!res.ok) throw new Error("Failed to send message");
+      if (!res.ok) throw new Error('Failed to send message');
 
       setSent(true);
       toast({
-        title: "Message sent!",
+        title: 'Message sent!',
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: '', email: '', message: '' });
       setTimeout(() => setSent(false), 5000);
     } catch {
       toast({
-        title: "Something went wrong",
-        description: "Please try again or contact me directly via email.",
-        variant: "destructive",
+        title: 'Something went wrong',
+        description: 'Please try again or contact me directly via email.',
+        variant: 'destructive',
       });
     } finally {
       setSending(false);
@@ -114,15 +107,21 @@ export function ContactSection() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={
+                      item.href.startsWith('http')
+                        ? 'noopener noreferrer'
+                        : undefined
+                    }
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
                   >
                     <div className="w-9 h-9 rounded-md bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors shrink-0">
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">{item.label}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {item.label}
+                      </p>
                       <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
                         {item.value}
                       </p>
@@ -134,8 +133,12 @@ export function ContactSection() {
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">{item.label}</p>
-                      <p className="text-sm font-medium text-foreground">{item.value}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {item.label}
+                      </p>
+                      <p className="text-sm font-medium text-foreground">
+                        {item.value}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -166,7 +169,9 @@ export function ContactSection() {
                     type="email"
                     placeholder="your@email.com"
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) =>
+                      setForm({ ...form, email: e.target.value })
+                    }
                   />
                 </div>
               </div>
@@ -177,7 +182,9 @@ export function ContactSection() {
                   placeholder="Tell me about your project or just say hello..."
                   rows={5}
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, message: e.target.value })
+                  }
                 />
               </div>
               <Button
